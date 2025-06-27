@@ -1,0 +1,28 @@
+type Query {
+  # Основной запрос для получения клиента
+  client(id: ID!): Client
+}
+
+type Client {
+  id: ID!
+  name: String!
+  age: Int
+  # Поля-отношения (опциональные)
+  documents: [Document!]  # Список документов
+  relatives: [Relative!]  # Список родственников
+}
+
+type Document {
+  id: ID!
+  type: String!
+  number: String!
+  issueDate: String
+  expiryDate: String
+}
+
+type Relative {
+  id: ID!
+  relationType: String!
+  name: String!
+  age: Int
+}
